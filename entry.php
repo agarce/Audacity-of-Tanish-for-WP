@@ -5,19 +5,15 @@
 
         <div class="post" id="post-<?php the_ID(); ?>">
 
-            <div class='post-title-bar'>
-
-                <div class='post-title-prefix'>&bull;</div>
+            <div class='posttitlebar'>
 
                 <div class='dateauthor'>
-                    <?php the_time('M jS, Y'); ?> by <?php the_author(); ?>
+                    <?php the_time('j-M-Y'); ?><?php //the_author(); ?>
                 </div>
 
                 <div class='heading'>
-                    <?php $title = get_the_title() or $title = "(no title)"; print $title; ?>
+                    <?php $title = get_the_title() or $title = "(sin título)"; print $title; ?>
                 </div>
-
-                <div class='divclear'></div>
 
             </div>
 
@@ -41,24 +37,24 @@
                         <ul>
                             <li>
                                 <a href="<?php the_permalink() ?>" rel="bookmark"
-                                    title="Permanent Link to <?php the_title(); ?>">Permalink</a>
+                                    title="Link permanente a <?php the_title(); ?>">Permalink</a>
                             </li>
                         </ul>
                     </div>
 
-                    <?php edit_post_link('Edit Entry', '<div><ul><li>', '</li></ul></div>'); ?>
+                    <?php edit_post_link('Editar entrada', '<div><ul><li>', '</li></ul></div>'); ?>
 
                     <?php if( ! is_single() ): ?>
                     <div>
                         <li>
-                            <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+                            <?php comments_popup_link('Sin comentarios', '1 comentario', '% Comments'); ?>
                         </li>
                     </div>
                     <?php endif; ?>
 
                     <?php if( get_the_category() ) : ?>
                         <div id='postcats-<?php the_ID(); ?>' class='postcats'>
-                            <h4>Categories</h4>
+                            <h4>Categorías</h4>
                             <?php
                                 foreach((get_the_category()) as $cat)
                                 {
@@ -95,8 +91,8 @@
 
                 <a
                         class='morelink'
-                        title='Click to view post and comments'
-                        href='<?php the_permalink(); ?>'>Read the full post and comments &raquo;</a>
+                        title='Leer publicación completa y comentarios'
+                        href='<?php the_permalink(); ?>'>Leer publicación completa y comentarios &raquo;</a>
 
                 <br clear='all' />
 
@@ -109,10 +105,10 @@
 <?php else : ?>
 
     <div class="post">
-        <div class='heading'>Not Found</div>
+        <div class='heading'>No encontrado</div>
             <br/>
             <div class='entry'>
-                Sorry, but you are looking for something that isn't here.
+                Lo sentimos, pero estás buscando algo que (ya) no se encuentra en esta dirección.
                 <br/>
                 <br/>
             </div>

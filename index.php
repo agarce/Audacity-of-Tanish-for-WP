@@ -5,8 +5,8 @@
 </div>
 
 <div class="navigation">
-    <?php previous_posts_link("<span style='float: right;'>Newer Entries &raquo;</span>"); ?>
-    <?php next_posts_link("<span>&laquo; Older Entries</span>"); ?>
+    <?php previous_posts_link("<span style='float: right;'>Publicaciones más recientes &raquo;</span>"); ?>
+    <?php next_posts_link("<span>&laquo; Publicaciones anteriores</span>"); ?>
     <div class='divclear'></div>
 </div>
 

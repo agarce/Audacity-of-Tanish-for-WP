@@ -43,6 +43,7 @@
     ?>
 
     <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-min.js'; ?>"></script>
+    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-migrate.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/tanish.js'; ?>"></script>
 
     <!-- load shortcode handlers -->
@@ -79,14 +80,14 @@
         <a href='http://apple.com/safari/'>
         <img
             border=0
-            src='http://dl.getdropbox.com/u/1547415/general/icons/safari.png'
+            src="<?php print get_bloginfo('template_url').'/images/navSafari.png'; ?>"
             alt='Safari'
             title='Safari'
         />
         <a href='http://getfirefox.com/'>
         <img
             border=0
-            src='http://dl.getdropbox.com/u/1547415/general/icons/firefox.png'
+            src="<?php print get_bloginfo('template_url').'/images/navFirefox.png'; ?>"
             alt='Firefox'
             title='Firefox'
         />
@@ -94,7 +95,7 @@
         <a href='http://apple.com/safari/'>
         <img
             border=0
-            src='http://dl.getdropbox.com/u/1547415/general/icons/chrome.png'
+            src="<?php print get_bloginfo('template_url').'/images/navChrome.png'; ?>"
             alt='Chrome'
             title='Chrome'
         />

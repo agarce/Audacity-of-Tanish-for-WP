@@ -8,7 +8,7 @@
         wp_link_pages(
                 array
                 (
-                    'before' => '<div id="subpagelinks"><span>Pages:</span> ',
+                    'before' => '<div id="subpagelinks"><span>Páginas:</span> ',
                     'after' => '</div>',
                     'next_or_number' => 'number'
                 )
