@@ -1,4 +1,31 @@
 <?php
+//Aplicar Crayon Syntax utilizando llamadas AJAX (plugin ajax-load-more)
+add_filter('the_content', 'add_crayons_to_content');
+global $singlePost;
+$singlePost = 0;
+function add_crayons_to_content($content) {
+    /*
+	global $post;
+	$id = $post->ID;
+	// Generate some code based on post ID etc
+	$some_code = "<strong>hello world</strong>";
+	$crayon = '<pre class="lang:html toolbar:always mark:1">' . $some_code . '</pre>';
+	// Add Crayon to content
+    */
+        global $singlePost;
+        if ($singlePost != 1) { //no hacer la llamada en single-post
+            $jsCrayon = '<script type="text/javascript">
+                    CrayonUtil.init();
+                    CrayonSyntax.init();
+                    CrayonSyntax.process(CrayonSyntax);    
+                </script>';
+            return CrayonWP::highlight($content) . $jsCrayon;
+        } else {
+            return $content;
+        }
+	
+
+}
 
 if( ! is_array(get_option('tanish')) )
     add_option('tanish', array('init' => 1));
@@ -7,11 +34,11 @@ $options = get_option('tanish');
 
 # defaults
 if( ! isset($options['showauthors' ]) ) $options['showauthors' ] = 0;
-if( ! isset($options['expandfirst' ]) ) $options['expandfirst' ] = 0;
-if( ! isset($options['showcredits' ]) ) $options['showcredits' ] = 1;
+if( ! isset($options['expandfirst' ]) ) $options['expandfirst '] = 0;
+if( ! isset($options['showcredits' ]) ) $options['showcredits '] = 1;
 if( ! isset($options['hidecomments']) ) $options['hidecomments'] = 0;
-if( ! isset($options['mainbgimage' ]) ) $options['mainbgimage' ] = 'None';
-if( ! isset($options['mainbgtile'  ]) ) $options['mainbgtile'  ] = 'None';
+if( ! isset($options['mainbgimage' ]) ) $options['mainbgimage '] = 'None';
+if( ! isset($options['mainbgtile'  ]) ) $options['mainbgtile ' ] = 'None';
 if( ! isset($options['iewarn'      ]) ) $options['iewarn'      ] = 0;
 # end defaults
 
@@ -20,6 +47,16 @@ update_option('tanish', $options);
 # setup admin menu
 add_action('admin_menu', 'tanish_admin_menu');
 
+
+
+//Añadir soporte HTML5 para mejorar el formulario de búsqueda
+function custom_theme_setup() {
+    add_theme_support( 'html5', array( 'search-form' ) );
+}
+add_action( 'after_setup_theme', 'custom_theme_setup' );
+
+
+
 if ( function_exists('register_sidebar') )
     add_sidebars();
 
@@ -27,7 +64,7 @@ if ( function_exists('register_sidebar') )
 //-------------------------------------------------------------------------------
 function tanish_admin_menu()
 {
-    add_theme_page('Tanish Options', 'Tanish Options', 'edit_themes', "AudacityOfTanish", 'tanish_options');
+    add_theme_page('Tanish Options', 'Tanish Options', 'edit_themes', "Audacity of Tanish", 'tanish_options');
 }
 
 //-------------------------------------------------------------------------------
@@ -302,7 +339,6 @@ function bg_images_css($selector, $optname, $imgdir, $pos_repeat)
     if( $image == 'None' )
         return;
 
-    $randidx = 0;
     if( $image == "Random" )
     {
         $images = preg_grep("/^\./", scandir(TEMPLATEPATH . "/images/" . $imgdir), PREG_GREP_INVERT);
@@ -352,6 +388,8 @@ function save_options()
 //------------------------------------------------------------------------------
 function add_sidebars()
 {
+    //Bottom Bar
+    
     register_sidebar(array(
         'name' => 'bottombarleft',
         'before_widget' => "<div class='sidebarlist'>",
@@ -384,6 +422,40 @@ function add_sidebars()
         'after_title' => "</p><span class='sbcontent'>",
         'after_widget' => "</span></div>",
     ));
+    
+    //Left Bar
+    register_sidebar(array(
+        'name' => 'leftbartop',
+        'before_widget' => "<div class='sidebarlist'>",
+        'before_title' => "<p class='sbtitle'>" .
+                            "<img alt='' height='10' src='" .
+                                get_bloginfo('template_directory') .
+                                "/images/down.png' /> ",
+        'after_title' => "</p><span class='sbcontent'>",
+        'after_widget' => "</span></div>",
+    ));
+
+    register_sidebar(array(
+        'name' => 'leftbarcenter',
+        'before_widget' => "<div class='sidebarlist'>",
+        'before_title' => "<p class='sbtitle'>" .
+                            "<img alt='' height='10' src='" .
+                                get_bloginfo('template_directory') .
+                                "/images/down.png' /> ",
+        'after_title' => "</p><span class='sbcontent'>",
+        'after_widget' => "</span></div>",
+    ));
+
+    register_sidebar(array(
+        'name' => 'leftbarbottom',
+        'before_widget' => "<div class='sidebarlist'>",
+        'before_title' => "<p class='sbtitle'>" .
+                            "<img alt='' height='10' src='" .
+                                get_bloginfo('template_directory') .
+                                "/images/down.png' /> ",
+        'after_title' => "</p><span class='sbcontent'>",
+        'after_widget' => "</span></div>",
+    ));
 }
 
 //------------------------------------------------------------------------------
@@ -403,5 +475,8 @@ function ac_admin_error($msg)
             </div>
         ";
 }
+
+
+
 
 ?>

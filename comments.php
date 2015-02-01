@@ -27,11 +27,11 @@ if ( post_password_required() )
     <div id='commentsheader' class='heading'>
         <img alt='' title='' align='center'
             src='<?php print get_bloginfo('template_url') . "/images/bubble_48.png"; ?>'>
-        Read Comments and Respond
+        Comentarios
     </div>
     <br />
 
-    <i><?php comments_number('No Responses', 'One Response', '% Responses' );?></i>
+    <i><?php comments_number('No hay comentarios', '1 comentario', '% comentarios' );?></i>
 
     <br />
     <br />
@@ -43,8 +43,8 @@ if ( post_password_required() )
 
         <div class="navigation">
             <?php
-                previous_comments_link('<span style="float: left;">&laquo; previous</span>');
-                next_comments_link('<span style="float: right;">next &raquo;</span>');
+                previous_comments_link('<span style="float: left;">&laquo; anterior</span>');
+                next_comments_link('<span style="float: right;">siguiente &raquo;</span>');
             ?>
             <br clear='all'/>
         </div>
@@ -75,7 +75,7 @@ if ( post_password_required() )
 
             <div class='heading'>
 
-                <?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?>
+                <?php comment_form_title( 'Deja un comentario', 'Deja un comentario sobre %s' ); ?>
 
                 <span class="cancel-comment-reply">
                     <?php cancel_comment_reply_link(); ?>

@@ -1,8 +1,13 @@
 <?php get_header(); ?>
-
+<?php get_sidebar( 'left' ); ?>
 <div id='single'>
 
-    <?php include('entry.php'); ?>
+    <?php 
+        global $singlePost;
+        $singlePost = 1;
+        the_post();
+        include('entry.php'); 
+    ?>
 
     <?php
         wp_link_pages(

@@ -36,7 +36,10 @@
     />
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
     <?php
         if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
         wp_head();
@@ -114,13 +117,16 @@
 <div id='bgtilediv'>
 <div id='container'>
 
-    <div id='rsslink'>
-        <a href='<?php bloginfo("rss2_url"); ?>'>
+    <!--div id='rsslink'>
+        <a href='<?php //bloginfo("rss2_url"); ?>'>
         <img border='0' align='top' alt='Site RSS'
-            src='<?php print get_bloginfo('template_directory') . "/images/rssgreen.png"; ?>'>
+            src='<?php //print get_bloginfo('template_directory') . "/images/rssgreen.png"; ?>'>
         </a>
+    </div-->
+    <div id='search'>
+        <?php get_search_form( true ); ?>
     </div>
-
+    
     <div id='header'>
         <div id='title' class='heading'>
             <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
@@ -128,4 +134,5 @@
         <div id='description'> <?php bloginfo('description'); ?></div>
         <br clear='all' />
     </div>
-
+    
+    
