@@ -51,7 +51,7 @@
                         }
                     ?>
                     </ul>
-                    <br clear='all' />
+                    <br />
                 </div>
             <?php endif; ?>
 
@@ -67,7 +67,7 @@
                                     $after = '</li>');
                     ?> 
                     </ul>
-                    <br clear='all' />
+                    <br />
                 </div>
             <?php endif; ?>
 
@@ -105,10 +105,10 @@
                 title='Leer publicación completa y comentarios'
                 href='<?php the_permalink(); ?>'>Leer publicación completa y comentarios »</a>
 
-        <br clear='all' />
+        <br />
 
     </div> <!-- entry -->
 
 </div> <!-- post -->
 
-<!--br clear='all' /-->
+<!--br  /-->

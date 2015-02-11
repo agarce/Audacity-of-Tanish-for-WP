@@ -1,79 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-
-<head profile="http://gmpg.org/xfn/11">
-
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta
         http-equiv="Content-Type"
         content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"
     />
 
-    <title>
-        <?php bloginfo('name'); ?>
-        <?php if ( is_single() ) { ?>
-            &raquo; Blog Archive
-        <?php } ?>
-        <?php wp_title(); ?>
-    </title>
-
-    <meta
-        name="generator"
-        content="WordPress <?php bloginfo('version'); ?>"
-    /> <!-- leave this for stats -->
-
-    <link
-        rel="stylesheet"
-        href="<?php bloginfo('stylesheet_url'); ?>"
-        type="text/css" media="screen"
-    />
-
-    <link
-        rel="alternate"
-        type="application/rss+xml"
+    <title><?php bloginfo('name'); ?> - <?php wp_title(); ?></title>
+    
+    <link rel="alternate" type="application/rss+xml"
         title="<?php bloginfo('name'); ?> RSS Feed"
         href="<?php bloginfo('rss2_url'); ?>"
     />
-
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <link rel="pingback" 
+          href="<?php bloginfo('pingback_url'); ?>" 
+    />
     
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" media="screen" 
+        href="<?php bloginfo('stylesheet_url'); ?>"
+    />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"  />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' />
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Condensed' />
     <?php
         if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
         wp_head();
     ?>
 
-    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-min.js'; ?>"></script>
-    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-migrate.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/tanish.js'; ?>"></script>
+    
 
     <!-- load shortcode handlers -->
-    <?php include_once("shortcodes.php"); ?>
+    <?php //include_once("shortcodes.php"); ?>
 
     <!-- set backgrounds, credits, etc based on user preference -->
-
     <style type='text/css'>
 
         <?php print bg_images_css("#bgtilediv", 'mainbgtile', 'bgtile', "repeat top left"); ?>
         <?php print bg_images_css("#container", 'mainbgimage', 'bgimage', "no-repeat 80% 0%"); ?>
 
     </style>
-
-    <?php print comments_hide_html(); ?>
-
     <?php
-
         // Load custom stylesheet
         if( file_exists(TEMPLATEPATH . "/custom.css") )
         {
             $customstylesheet = get_bloginfo('template_url') . "/custom.css";
             print "<link rel='stylesheet' href='$customstylesheet' type='text/css' media='screen'>\n";
         }
-
     ?>
-
+    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-min.js'; ?>"></script>
+    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/tanish.js'; ?>"></script>
+    <?php print comments_hide_html(); ?>
 </head>
 
 <body>
@@ -87,6 +64,7 @@
             alt='Safari'
             title='Safari'
         />
+        </a>
         <a href='http://getfirefox.com/'>
         <img
             border=0
@@ -104,7 +82,7 @@
         />
         </a>
         You are using Internet Explorer. Have you considered upgrading?
-        <br clear='all' />
+        <br />
     </div>
 <?php endif; ?>
 
@@ -132,7 +110,7 @@
             <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
         </div>
         <div id='description'> <?php bloginfo('description'); ?></div>
-        <br clear='all' />
+        <br />
     </div>
     
     

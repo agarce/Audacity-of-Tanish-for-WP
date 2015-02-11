@@ -10,7 +10,7 @@
             &raquo; Substance: <a href='http://wordpress.org/'>WordPress</a>
             &raquo; Style: <a href='http://ahren.org/code/tanish-wp'>Audacity of Tanish</a>
         </div>
-        <br clear='all' />
+        <br />
     </div>
 <?php endif; ?>
 

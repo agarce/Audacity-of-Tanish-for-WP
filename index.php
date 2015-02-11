@@ -59,10 +59,8 @@
 
 <?php global $options; if( $options['expandfirst'] == 1 ) : ?>
 
-    <script language='JavaScript'>
-
+    <script>
         showIndexPost.call($('#indexpage > .post:first .posttitlebar'));
-
     </script>
 
 <?php endif; ?>

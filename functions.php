@@ -148,7 +148,7 @@ function tanish_options()
         . images_dir_html("bgimage", 4, 'mainbgimage') .
     "
             </div>
-            <br clear='all' />
+            <br />
             <br/>
             <hr size='1'/>
 
@@ -315,8 +315,7 @@ function comments_hide_html()
 
         </style>
 
-        <script language='JavaScript'>
-
+        <script>
             $(document).ready
             (
                 function()
@@ -324,7 +323,6 @@ function comments_hide_html()
                     $('#commentsheader').click(function() { $('#commentscontainer').toggle(500); });
                 }
             );
-
         </script>
     ";
 }
@@ -397,8 +395,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
 
     register_sidebar(array(
@@ -408,8 +406,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
 
     register_sidebar(array(
@@ -419,8 +417,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
     
     //Left Bar
@@ -431,8 +429,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
 
     register_sidebar(array(
@@ -442,8 +440,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
 
     register_sidebar(array(
@@ -453,8 +451,8 @@ function add_sidebars()
                             "<img alt='' height='10' src='" .
                                 get_bloginfo('template_directory') .
                                 "/images/down.png' /> ",
-        'after_title' => "</p><span class='sbcontent'>",
-        'after_widget' => "</span></div>",
+        'after_title' => "</p><div class='sbcontent'>",
+        'after_widget' => "</div></div>",
     ));
 }
 

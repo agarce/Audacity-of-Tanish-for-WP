@@ -5,6 +5,7 @@ $(document).ready
     {
         // IE specific hacks to deal with the fact that if you have any floating element
         // inside another, then the inside one's width is set to 100%!
+        /*
         if( $.browser.msie )
         {
             $('#indexpage .postmetabutton').css('float', 'none');
@@ -18,12 +19,13 @@ $(document).ready
             $('.postmetadata DIV:last-child').css('border-bottom', 'none');
             $('.entry UL LI:last-child, .entry OL LI:last-child').css('border-bottom', 'none');
         }
-
+        */
+       
         //$('#indexpage .posttitlebar').click(showIndexPost);
         //$('#indexpage .postmetabutton').click(togglePostMeta);
 
-        $('.posttitlebar').live('click', showIndexPost);
-        $('.postmetabutton').live('click', togglePostMeta);
+        $(document).on("click", ".posttitlebar", showIndexPost); //$('.posttitlebar').live('click', showIndexPost);
+        $(document).on("click", ".postmetabutton", togglePostMeta); //$('.postmetabutton').live('click', togglePostMeta);
 
 
         $('.sbtitle').click(toggleSBList);

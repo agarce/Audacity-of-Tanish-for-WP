@@ -54,7 +54,7 @@
         <?php endif; ?>
     </div>
  
-    <br clear='all' />
+    <br />
 
 </div>
 

@@ -46,7 +46,7 @@ if ( post_password_required() )
                 previous_comments_link('<span style="float: left;">&laquo; anterior</span>');
                 next_comments_link('<span style="float: right;">siguiente &raquo;</span>');
             ?>
-            <br clear='all'/>
+            <br />
         </div>
 
     <?php else : // this is displayed if there are no comments so far ?>
